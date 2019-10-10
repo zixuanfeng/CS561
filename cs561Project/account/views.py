@@ -11,6 +11,7 @@ from django.contrib.auth.hashers import (
     check_password, is_password_usable, make_password,
 )
 from django.utils import timezone
+import datetime
 
 def index(request):
     return render(request, 'account/index.html')
@@ -54,7 +55,7 @@ class logInWithEmailorUserName:
         try:
             user = User.objects.get(Q(username=username)|Q(email=username))
             if user.new_check_password(password,user.password):
-                user.last_login=timezone.now()
+                user.last_login=datetime.datetime.now()
                 return user
             return None
         except User.DoesNotExist:
