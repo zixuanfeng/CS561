@@ -10,6 +10,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.hashers import (
     check_password, is_password_usable, make_password,
 )
+from django.utils import timezone
 
 def index(request):
     return render(request, 'account/index.html')
@@ -52,8 +53,8 @@ class logInWithEmailorUserName:
     def authenticate(self, request, username=None, password=None):
         try:
             user = User.objects.get(Q(username=username)|Q(email=username))
-            print(user.new_check_password(password,user.password))
             if user.new_check_password(password,user.password):
+                user.last_login=timezone.now()
                 return user
             return None
         except User.DoesNotExist:
