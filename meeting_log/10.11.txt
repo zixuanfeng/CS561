@@ -1,0 +1,6 @@
+1.Identify the sprint 1 web pages.
+2.Disscuss the due time for the website view build.
+3.In the weekend, web UI develop should finish the beatiful website 
+design, and for back develop need to finish the foundational function.
+4.For Monday, check the whole sprint 1 web site and begin to text, debug
+and boost the website userfriendly.
