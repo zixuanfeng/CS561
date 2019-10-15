@@ -4,30 +4,71 @@
 <html>
 <head>
   <title>{% block title %}{% endblock %}</title>
-  <link href="{% static "css/style.css" %}" rel="stylesheet">
+  <link href="{% static "css/index.css" %}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-  <div id="header">
-    <span class="logo">WeShare</span>
-    {% if request.user.is_authenticated %}
-      <ul class="menu">
-        <li>
-          <a href="{% url "board" %}">My dashboard</a>
-        </li>
-      </ul>
-    {% endif %}
-    <span class="user">
-      {% if request.user.is_authenticated %}
-         Hello  {{request.user.username }}>{{ request.user.first_name }},
-        <a href="{% url "logout" %}"><u>Logout</u></a>
-      {% else %}
-        <a href="{% url "login" %}"><u>Log-in</u></a>
-      {% endif %}
-    </span>
-  </div>
+ <!-- Navigation bar-->
+    <div class="head-container">
+        <a href="#" class="brand"><img src="img/head.png" alt="" class="w2g-logo-press-copy"></a>
+        <nav role="navigation" class="nav-menu-2">
+            <a href=" " class="header-main-link w--current">Merchant</a>
+            <a href=" " class="header-main-link">Warehouse</a>
+            <a href="#" class="header-main-link">About</a>   
+            <a href="#" class="header-main-link">Resorce</a>
+             {% if request.user.is_authenticated %}
+             {{request.user.username }}>{{ request.user.first_name }},
+            <a href="{% url "logout" %}"><u>Log Out</u></a>
+            {% else %}
+             <a href="{% url "login" %}" class="header-main-link">Log In</a>
+             <a href="{% url "signup" %}" class="header-main-link">Sign Up</a>
+            {% endif %}
+            <a href="#" class="header-main-link w--current sign-up-button w-button">Get Started</a>
+        </nav>
+    </div>
   <div id="content">
     {% block content %}
     {% endblock %}
   </div>
+  <!-- bottom bar-->
+  <div class="footer">
+        <div class="w-container">
+            <div class="footer-link">
+                <div class="column-23 w-col w-col-4">
+                    <img src="img/footer1.png" width="30" sizes="(max-width: 479px) 39vw, 158px" alt="" class="image-68">
+                    <h3 class="heading-title">RCADS</h3>
+                    <div class="text-block-10"><strong class="bold-text-11">This is for project brief desc.This is for project brief desc.</strong></div>
+                    <a href="https://www.linkedin.com/company/ware2go/" target="_blank" class="link-block-15 w-inline-block"><img src="./img/footer2.png" alt="" class="image-62"></a>
+                    <a href="https://business.facebook.com/Ware2Go-992607284220746/" target="_blank" class="link-block-15 w-inline-block"><img src="./img/footer3.png" alt="" class="image-62"></a>
+                </div>
+                <div class="w-col w-col-2">
+                    <h4 class="footer-title">Company</h4>
+                    <a href="#" class="page-link in-footer">About</a>
+                    <a href="#" class="page-link in-footer">Support</a>
+                    <a href="#" class="page-link in-footer">Get Started</a>
+                    <a href="#" class="page-link in-footer">Press</a>
+                    <a href="#" class="page-link in-footer">Resources</a>
+                    <a href="#" class="page-link in-footer">Careers</a>
+                </div>
+                <div class="w-col w-col-2">
+                    <h4 class="footer-title">Product</h4>
+                    <a href="#" class="page-link in-footer">Merchant</a>
+                    <a href="#" class="page-link in-footer">Warehouse</a>
+                </div>
+                <div class="w-col w-col-2">
+                    <h4 class="footer-title">LEGAL STUFF</h4>
+                    <a href="#" class="page-link in-footer">Terms of Service</a>
+                </div>
+                <div class="w-col w-col-2">
+                    <h4 class="footer-title">CONTACT</h4>
+                    <a href="#" class="page-link in-footer">Merchant</a>
+                    <a href="#" class="page-link in-footer">Warehouse</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-block-14">
+            2019 Oregonstate University CS561 Remote Control Automatic Door Systerm Project
+            <!--2019 United Parcel Service of America, Inc. All rights reserved. &nbsp;UPS and the UPS brandmark and the color brown are registered trademarks of United Parcel Service of America, Inc.-->
+        </div>
+    </div>
 </body>
 </html>
