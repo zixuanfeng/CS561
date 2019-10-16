@@ -1,0 +1,4 @@
+1. Separate the navigation bar and bottom from the main page.
+2. Other page direct use the navigation bar and bottom to develop
+3. Discuss app develop problems
+4. UI disign share and discuss the UI disign draft.
