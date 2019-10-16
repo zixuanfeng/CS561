@@ -4,20 +4,20 @@
 <html>
 <head>
   <title>{% block title %}{% endblock %}</title>
-  <link href="{% static "css/index.css" %}" rel="stylesheet" type="text/css"/>
+  <link href="{% static "css/index.css" %}" rel="stylesheet" />
 </head>
 <body>
  <!-- Navigation bar-->
     <div class="head-container">
-        <a href="#" class="brand"><img src="img/head.png" alt="" class="w2g-logo-press-copy"></a>
+        <a href="{% url "index" %}" class="brand"><img src="{% static "img/head.png" %}" alt="" class="w2g-logo-press-copy"></a>
         <nav role="navigation" class="nav-menu-2">
-            <a href=" " class="header-main-link w--current">Merchant</a>
-            <a href=" " class="header-main-link">Warehouse</a>
+            <a href="{% url "index" %}" class="header-main-link w--current">Merchant</a>
+            <a href="{% url "index" %}" class="header-main-link">Warehouse</a>
             <a href="#" class="header-main-link">About</a>   
             <a href="#" class="header-main-link">Resorce</a>
              {% if request.user.is_authenticated %}
-             {{request.user.username }}>{{ request.user.first_name }},
-            <a href="{% url "logout" %}"><u>Log Out</u></a>
+             Hi {{request.user.username }} {{ request.user.first_name }}
+            <a href="{% url "logout" %}" class="header-main-link">Log Out</a>
             {% else %}
              <a href="{% url "login" %}" class="header-main-link">Log In</a>
              <a href="{% url "signup" %}" class="header-main-link">Sign Up</a>
@@ -30,15 +30,16 @@
     {% endblock %}
   </div>
   <!-- bottom bar-->
+  <br><br><br><br>
   <div class="footer">
         <div class="w-container">
             <div class="footer-link">
                 <div class="column-23 w-col w-col-4">
-                    <img src="img/footer1.png" width="30" sizes="(max-width: 479px) 39vw, 158px" alt="" class="image-68">
+                    <img src="{% static "img/footer1.png" %}" width="30" sizes="(max-width: 479px) 39vw, 158px" alt="" class="image-68">
                     <h3 class="heading-title">RCADS</h3>
                     <div class="text-block-10"><strong class="bold-text-11">This is for project brief desc.This is for project brief desc.</strong></div>
-                    <a href="https://www.linkedin.com/company/ware2go/" target="_blank" class="link-block-15 w-inline-block"><img src="./img/footer2.png" alt="" class="image-62"></a>
-                    <a href="https://business.facebook.com/Ware2Go-992607284220746/" target="_blank" class="link-block-15 w-inline-block"><img src="./img/footer3.png" alt="" class="image-62"></a>
+                    <a href="https://www.linkedin.com/company/ware2go/" target="_blank" class="link-block-15 w-inline-block"><img src="{% static "img/footer2.png" %}" alt="" class="image-62"></a>
+                    <a href="https://business.facebook.com/Ware2Go-992607284220746/" target="_blank" class="link-block-15 w-inline-block"><img src="{% static "img/footer3.png" %}" alt="" class="image-62"></a>
                 </div>
                 <div class="w-col w-col-2">
                     <h4 class="footer-title">Company</h4>
