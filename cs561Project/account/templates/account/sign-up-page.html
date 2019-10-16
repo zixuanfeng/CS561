@@ -3,9 +3,9 @@
 {% block title %} NEW USER{% endblock %}
 
 {% block content %}
-<br><br><br><br>
-    <h1>Create an account</h1>
-    <p>you can use the following form to sign up:</p>
+<br><br><br><br><br>
+    <h1 style="margin:0 10px 10px;">Create an account</h1>
+    <p style="margin:0 10px 10px;">you can use the following form to sign up:</p>
     <form action='.' method="POST">
         {{ new_user_sign_up.as_p }}
         {% csrf_token %}
