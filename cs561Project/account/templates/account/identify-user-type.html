@@ -1,0 +1,8 @@
+{% extends "main.html" %}
+
+{% block title %}Hello!{% endblock %}
+{% block content %}
+<br><br><br><br><br><br><br><br>
+    <p><a href="{% url "signup_for_leander" %}">I am a leander</a></p>
+    <p><a href="{% url "signup_for_renter" %}">I am a renter</a></p>
+{% endblock %}
