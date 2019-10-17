@@ -1,0 +1,4 @@
+1. confirm the sign in and sign up functions
+2. prepare the unit test
+3. prepare the report plan 
+4. discuss the frame work
