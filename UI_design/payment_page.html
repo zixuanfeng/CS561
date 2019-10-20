@@ -1,0 +1,61 @@
+{% extends "main.html" %}
+{% block title %}Ware House System{% endblock %}
+{% block content %}
+<br><br><br><br>
+<style type="text/css">
+    input.text{text-align:center;padding:10px 20px;width:300px;}
+    
+    button {
+    color: #444444;
+    background: #F3F3F3;
+    border: 1px #DADADA solid;
+    padding: 20px 30px;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 9pt;
+    outline: none;
+    
+}
+button:hover {
+    border: 1px #C6C6C6 solid;
+    box-shadow: 1px 1px 1px #EAEAEA;
+    color: #333333;
+    background: #F7F7F7;
+}
+button:active {
+    box-shadow: inset 1px 1px 1px #DFDFDF;   
+}
+   
+</style>
+<h1>Payment Details</h1>
+     <hr/><div board = 1, body style = "background-color: white">
+        <form>  
+       <ul><strong><h3>Price: </h3></strong></ul> <br>
+       
+       
+       <div style="input.text">
+       <ul><input class = "text" placeholder="Name of Card Holder" name="uesd02" /></ul><br>
+      </div> 
+
+      <div style="input.text;">
+       <ul><input  class = "text" placeholder="Card Number" name="uesd02"/></ul><br>
+       </div>
+      
+       <div style="input.text;">
+        <ul><input class="text" placeholder="Expiration Date(MM/YY)" name="uesd01"/></ul><br>
+       </div> 
+
+
+       <div style="input.text;">
+        <ul><input class="text" placeholder="Security Code" name="uesd02"/></ul><br>
+        <br>
+        </div>
+
+       <br><br><br>
+       <div style=" float:left;"><button class="button" >Checkout</button><button class="button" right>Cancel</button>
+        </div>
+
+        </form> 
+    </div>
+{% endblock %}
+
