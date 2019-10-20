@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50016
 File Encoding         : 65001
 
-Date: 2019-10-07 13:16:07
+Date: 2019-10-20 13:04:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -58,6 +58,7 @@ CREATE TABLE `user` (
   `first_name` varchar(30) default NULL,
   `last_name` varchar(150) default NULL,
   `email` varchar(254) default NULL,
+  `root` tinyint(1) default NULL,
   PRIMARY KEY  (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -79,6 +80,7 @@ CREATE TABLE `warehouse` (
   `warehouse_category` varchar(150) default NULL,
   `warehouse_isAvailable` tinyint(1) default NULL,
   `warehouse_currentowenr_use_id` int(10) default NULL,
+  `current_password` varchar(255) default NULL,
   PRIMARY KEY  (`warehouse_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
