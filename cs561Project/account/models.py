@@ -43,6 +43,7 @@ class User(models.Model):
     first_name = models.CharField(max_length=30, blank=True, null=True)
     last_name = models.CharField(max_length=150, blank=True, null=True)
     email = models.CharField(max_length=254, blank=True, null=True)
+    root = models.IntegerField(blank=True, null=True)
     USERNAME_FIELD = 'username'
 
     class Meta:
@@ -73,6 +74,7 @@ class Warehouse(models.Model):
     warehouse_category = models.CharField(max_length=150, blank=True, null=True)
     warehouse_isavailable = models.IntegerField(db_column='warehouse_isAvailable', blank=True, null=True)  # Field name made lowercase.
     warehouse_currentowenr_use_id = models.IntegerField(blank=True, null=True)
+    current_password = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
         managed = True

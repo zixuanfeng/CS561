@@ -45,7 +45,7 @@ def signup_for_leander(request):
         if is_new_user==True:
             return render(request, 'account/user_exists.html', )
         else:
-            # usernew.root=""
+            usernew.root=1
             usernew.save()
             return render(
             request,'account/finsh_sign_up.html',{'usernew': usernew})
@@ -59,7 +59,7 @@ def signup_for_renter(request):
         if is_new_user==True:
             return render(request, 'account/user_exists.html', )
         else:
-            # usernew.root=""
+            usernew.root=2
             usernew.save()
             return render(
             request,'account/finsh_sign_up.html',{'usernew': usernew})
