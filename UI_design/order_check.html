@@ -63,12 +63,14 @@
                 <tr>
                         <td>price:<input class="text" style=" float:right;" placeholder="/XXXXX" readonly="readonly" />
                 </tr>
-                
-                <tr>
-                        <td><table border="0" width="200" height="50" align="center" cellspacing="0" ></table> </td>
-                                <td bgcolor="white"><button>Pay Now</button></td> 
-                        <td> <table border="0" width="200" height="50" align="center" cellspacing="0" ></table> </td> 
-                                        <td bgcolor="white"><button>Cancel</button></td>
-                </tr>
+                <div style="position:relative;top:100px; right:50px">
+                <div align = "center" style = "position:absolute; top:250px; left:500px">
+                        
+                                <button>Pay Now</button>
+                                </div>
+                                <div align = "center" style = "position:absolute; top:250px; left:800px">        
+                <button>Cancel</button>
+                </div>
+                </div>
             </table>
 {% endblock %}
