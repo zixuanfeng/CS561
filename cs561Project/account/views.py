@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
-from .models import User
+from .models import User,RenterAccount
 from .forms import  UserCreate
 from django.db.models import Q
 import uuid
@@ -20,51 +20,79 @@ def board(request):
 @login_required
 def pay(request):
     return render(request, 'account/Payment-page.html')
-def username_check(new_user_sign_up):
-    user=User.objects.filter(username = new_user_sign_up.cleaned_data['username'])
-    if user:
-        return True
-    else:
-        return False
-def sign_up_utility(new_user_sign_up,request):
-    if new_user_sign_up.is_valid():
-        usernew=new_user_sign_up.save(commit=False)
-        usernew.set_password(
-                new_user_sign_up.cleaned_data['password1']
-            )
-        usernew.user_id=random.randint(0,999999999)
-        return usernew
-def sigup_redirect(request):
-    new_user_sign_up = UserCreate()
-    return render(request,'account/sign-up-page.html',{'new_user_sign_up': new_user_sign_up} )
+@login_required
+def renter_view(request):
+    # Buba's work here
+
+
+    return render(request, 'renter/renter_view.html')
+    
+
 def signup_for_leander(request):
     if request.method == 'POST':
         new_user_sign_up=UserCreate(request.POST)
-        usernew=sign_up_utility(new_user_sign_up,request)
-        is_new_user=username_check(new_user_sign_up)
-        if is_new_user==True:
-            return render(request, 'account/user_exists.html', )
-        else:
-            usernew.root=1
-            usernew.save()
-            return render(
-            request,'account/finsh_sign_up.html',{'usernew': usernew})
+        if new_user_sign_up.is_valid():
+            usernew=new_user_sign_up.save(commit=False)
+            usernew.set_password(
+                new_user_sign_up.cleaned_data['password1']
+            )
+            usernew.user_id=random.randint(0,999999999)
+            try:
+                user=User.objects.get(username = new_user_sign_up.cleaned_data['username'])
+            except Exception as a:
+                user=None
+            if user:
+                return render(request, 'account/user_exists.html', )
+            else:
+                usernew.root=1
+                usernew.save()
+                return render(
+                    request,
+                    'account/finsh_sign_up.html',
+                    {'usernew': usernew}
+                )
     else:
-        return sigup_redirect(request)
+        new_user_sign_up = UserCreate()
+    return render(
+        request,
+        'account/sign-up-page.html',
+        {'new_user_sign_up': new_user_sign_up}
+    )
+
 def signup_for_renter(request):
     if request.method == 'POST':
         new_user_sign_up=UserCreate(request.POST)
-        usernew=sign_up_utility(new_user_sign_up,request)
-        is_new_user=username_check(new_user_sign_up)
-        if is_new_user==True:
-            return render(request, 'account/user_exists.html', )
-        else:
-            usernew.root=2
-            usernew.save()
-            return render(
-            request,'account/finsh_sign_up.html',{'usernew': usernew})
+        if new_user_sign_up.is_valid():
+            usernew=new_user_sign_up.save(commit=False)
+            usernew.set_password(
+                new_user_sign_up.cleaned_data['password1']
+            )
+            usernew.user_id=random.randint(0,999999999)
+            try:
+                user=User.objects.get(username = new_user_sign_up.cleaned_data['username'])
+            except Exception as a:
+                user=None
+            if user:
+                return render(request, 'account/user_exists.html', )
+            else:
+                usernew.root=2
+                usernew.save()
+                renter=RenterAccount()
+                renter.user=usernew
+                renter.balance=200
+                renter.save()
+                return render(
+                    request,
+                    'account/finsh_sign_up.html',
+                    {'usernew': usernew}
+                )
     else:
-        return sigup_redirect(request)
+        new_user_sign_up = UserCreate()
+    return render(
+        request,
+        'account/sign-up-page.html',
+        {'new_user_sign_up': new_user_sign_up}
+    )
 def signup(request):
     return render(request, 'account/identify-user-type.html')
 class logInWithEmailorUserName:

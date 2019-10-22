@@ -15,8 +15,12 @@
             <a href="{% url "index" %}" class="header-main-link">Warehouse</a>
             <a href="#" class="header-main-link">About</a>   
             <a href="#" class="header-main-link">Resorce</a>
-             {% if request.user.is_authenticated %}
+             {% if request.user.is_authenticated%}
+                {% if request.user.root == 2%}
+             Hi <a href="{% url "renter_view" %}" class="header-main-link">{{request.user.username }} {{ request.user.first_name }}</a>
+                {% else %}
              Hi {{request.user.username }} {{ request.user.first_name }}
+                {% endif %}
             <a href="{% url "logout" %}" class="header-main-link">Log Out</a>
             {% else %}
              <a href="{% url "login" %}" class="header-main-link">Log In</a>
