@@ -22,9 +22,7 @@ def pay(request):
     return render(request, 'account/Payment-page.html')
 @login_required
 def renter_view(request):
-    # Buba's work here
-
-
+    # Buba's work 
     return render(request, 'renter/renter_view.html')
     
 
