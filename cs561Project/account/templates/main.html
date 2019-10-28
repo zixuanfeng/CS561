@@ -9,7 +9,7 @@
 <body>
  <!-- Navigation bar-->
     <div class="head-container">
-        <a href="{% url "index" %}" class="brand"><img src="{% static "img/head.png" %}" alt="" class="w2g-logo-press-copy"></a>
+        <a href="{% url  "index" %}" class="brand"><img src="{% static "img/head.png" %}" alt="" class="w2g-logo-press-copy"></a>
         <nav role="navigation" class="nav-menu-2">
             <a href="{% url "index" %}" class="header-main-link w--current">Merchant</a>
             <a href="{% url "index" %}" class="header-main-link">Warehouse</a>
@@ -17,7 +17,7 @@
             <a href="#" class="header-main-link">Resorce</a>
              {% if request.user.is_authenticated%}
                 {% if request.user.root == 2%}
-             Hi <a href="{% url "renter_view" %}" class="header-main-link">{{request.user.username }} {{ request.user.first_name }}</a>
+             Hi <a href="{% url "renter:renter_view" %}" class="header-main-link">{{request.user.username }} {{ request.user.first_name }}</a>
                 {% else %}
              Hi {{request.user.username }} {{ request.user.first_name }}
                 {% endif %}

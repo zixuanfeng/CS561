@@ -19,13 +19,7 @@ def board(request):
     return render(request, 'account/board.html')
 @login_required
 def pay(request):
-    return render(request, 'account/Payment-page.html')
-@login_required
-def renter_view(request):
-    # Buba's work 
-    return render(request, 'renter/renter_view.html')
-    
-
+    return render(request, 'account/Payment-page.html')    
 def signup_for_leander(request):
     if request.method == 'POST':
         new_user_sign_up=UserCreate(request.POST)
