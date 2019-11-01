@@ -1,0 +1,3 @@
+1.review the old coding to fix some bug.
+2.review the whole user story to decide the next sprint story.
+3.review and anlysis the compentent for the project.

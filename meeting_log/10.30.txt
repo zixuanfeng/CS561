@@ -1,0 +1,4 @@
+1.We decide the next sprint goal, for lender basic function.
+2.Dissuess the lender function and each memeber to think about the 
+lender user story.
+3.Analysis priority for the all user story which we have.

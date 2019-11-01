@@ -1,0 +1,7 @@
+1. Next sprint for lender, we need have 
+lender view
+update personal warehouse function
+set for the price
+2. Add some mid-level priority function in renter user story.
+edit renter Info
+3.perfect for the renter order check and payment function.
