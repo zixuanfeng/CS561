@@ -1,0 +1,4 @@
+1.Re-analyze the test of the system 
+according to the content of the lecture.
+2.Reanalyze the rationality and security of the database.
+3.Assign sprint2 task to everyone.
