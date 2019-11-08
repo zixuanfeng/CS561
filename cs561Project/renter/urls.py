@@ -2,7 +2,7 @@ from django.urls import path
 from django.conf.urls import url
 from . import views
 from . import views
-
+app_name="renter"
 urlpatterns = [
     path('renter_view/', views.renter_view, name="renter_view"),
     path('renter_list/', views.renter_list, name="renter_list"),

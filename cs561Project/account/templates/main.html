@@ -12,7 +12,7 @@
         <a href="{% url  "index" %}" class="brand"><img src="{% static "img/head.png" %}" alt="" class="w2g-logo-press-copy"></a>
         <nav role="navigation" class="nav-menu-2">
             <a href="{% url "index" %}" class="header-main-link w--current">Merchant</a>
-            <a href="{% url "renter_list" %}" class="header-main-link">Warehouse</a>
+            <a href="{% url "renter:renter_list" %}" class="header-main-link">Warehouse</a>
             <a href="#" class="header-main-link">About</a>   
             <a href="#" class="header-main-link">Resorce</a>
              {% if request.user.is_authenticated%}
