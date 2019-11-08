@@ -1,0 +1,3 @@
+1.Reschedule the sprint 2 task
+2.Optimize the functionality of spirnt 1.
+3.Support lender to upload your own warehouse.

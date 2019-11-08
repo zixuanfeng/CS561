@@ -1,0 +1,4 @@
+1.Face-to-face implementation of each developer uploading their own files including 
+main project and test scripts.
+2.Imigrate the different work into github, and make sure everyone can
+run the web.
