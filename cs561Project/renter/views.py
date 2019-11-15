@@ -4,21 +4,36 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from account.models import Warehouse
+from account.models import User
 import random
 
 
 # @login_required
 # def checking_renting(request):
-#     #template = loader.get_template('')
+   
 #     renting_list=Warehouse.objects.get(warehouse_currentow)
 #     user = User.objects.get(Q(username=username)|Q(email=username))
 #     return render(request, 'renter/checking_renting.html')
+
 # @login_required
-# def personal_information(request):
-#     #template = loader.get_template('')
-#     renting_list=Warehouse.objects.get(warehouse_currentow)
-#     user = User.objects.get(Q(username=username)|Q(email=username))
-#     return render(request, 'renter/personal_information.html')
+# def personal_information(request,username,email):
+#     if request.method == 'POST':
+#         name=username
+#         mail=email
+#         if name == ''|mail == '':
+#             return render(request, 'renter/personal_information.html')
+#         user = User.objects.get(user_id=request.user.user_id)
+#         user.email=email
+#         user.username=name
+#         user.save()
+#         return render(request, 'renter/update_success.html')
+#     else:
+#         user = User.objects.get(user_id=request.user.user_id)
+#     return render(
+#         request,
+#         'renter/personal_information.html',
+#         {'user_info': user}
+#     )
 
 @login_required
 def renter_view(request):

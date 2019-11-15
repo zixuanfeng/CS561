@@ -10,9 +10,18 @@ from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.hashers import (
     check_password, is_password_usable, make_password,
 )
+import django.contrib.auth
 from django.conf import settings
 from django.utils.module_loading import import_string
 from django.core.exceptions import ImproperlyConfigured
+
+class LenderAccount(models.Model):
+    use = models.ForeignKey('User', models.DO_NOTHING, primary_key=True)
+    balance = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = True
+        db_table = 'lender_account'
 
 class RentOrder(models.Model):
     order_id = models.IntegerField(primary_key=True)
@@ -27,7 +36,6 @@ class RentOrder(models.Model):
 class RenterAccount(models.Model):
     user = models.ForeignKey('User', models.DO_NOTHING)
     balance = models.FloatField(blank=True, null=True)
-    rented_warehouse = models.IntegerField(blank=True, null=True)
 
     class Meta:
         managed = True
@@ -60,6 +68,8 @@ class User(models.Model):
         return True
     def is_authenticated(self):
         return True
+    def check_password(self,password,ex_pass):
+        return check_password(password, ex_pass)
 
 
 
@@ -75,6 +85,7 @@ class Warehouse(models.Model):
     warehouse_isavailable = models.IntegerField(db_column='warehouse_isAvailable', blank=True, null=True)  # Field name made lowercase.
     warehouse_currentowenr_use_id = models.IntegerField(blank=True, null=True)
     current_password = models.CharField(max_length=255, blank=True, null=True)
+    warehouse_currentuser_use_id = models.IntegerField(blank=True, null=True)
 
     class Meta:
         managed = True
