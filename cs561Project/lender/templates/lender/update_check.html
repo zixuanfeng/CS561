@@ -1,0 +1,79 @@
+{% extends "main.html" %}
+{% block title %}Ware House System{% endblock %}
+{% block content %}
+
+<br><br><br><br><br>
+<style>
+
+        button {
+            color: #444444;
+            background: #F3F3F3;
+            border: 1px #DADADA solid;
+            padding: 20px 30px;
+            border-radius: 2px;
+            font-weight: bold;
+            font-size: 11pt;
+            outline: none;
+
+        }
+        button:hover {
+            border: 1px #C6C6C6 solid;
+            box-shadow: 1px 1px 1px #EAEAEA;
+            color: #333333;
+            background: #F7F7F7;
+        }
+        button:active {
+            box-shadow: inset 1px 1px 1px #DFDFDF;
+        }
+
+        </style>
+     <h1>Update check</h1>
+
+
+
+        <hr/><div board = 1, body style = "background-color: white">
+<table  width="800" align="center" >
+
+
+
+                <tr>
+                        <td>Warehouse Detail<td width="100" height="50"></td>
+
+                        <td width="100" height="50"></td>
+
+                </tr>
+
+                <tr>
+                        <td>ID:<input class="text" style=" float:right;" placeholder="{{The_Warehouse.warehouse_id }}" readonly="readonly" ></td>
+                </tr>
+
+                <tr>
+                        <td>img:<input class="text" style=" float:right;" placeholder="{{The_Warehouse.warehouse_image }}" readonly="readonly" />
+                </tr>
+
+                <tr>
+                        <td>catagory:<input class="text" style=" float:right;" placeholder="{{The_Warehouse.warehouse_category }}" readonly="readonly" />
+                </tr>
+
+                <tr>
+                        <td>size:<input class="text" style=" float:right;" placeholder="{{The_Warehouse.warehouse_size }}" readonly="readonly" />
+                </tr>
+
+                <tr>
+                        <td>desc:<input class="text" style=" float:right;" placeholder="{{The_Warehouse.warehouse_desc }}" readonly="readonly" />
+                </tr>
+
+                <tr>
+                        <td>price:<input class="text" style=" float:right;" placeholder="{{The_Warehouse.warehouse_price }}" readonly="readonly" />
+                </tr>
+                <div style="position:relative;top:100px; right:50px">
+                <div align = "center" style = "position:absolute; top:250px; left:500px">
+
+                                <a href="{% url "lender:update_warehouse_success" %}" class="button">Update!</a>
+                                </div>
+                                <div align = "center" style = "position:absolute; top:250px; left:800px">
+                                 <a href="{% url "lender:lender_view" %}" class="button">Cancel</a>
+                </div>
+                </div>
+            </table>
+{% endblock %}

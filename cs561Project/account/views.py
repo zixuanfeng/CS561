@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
-from .models import User,RenterAccount
+from .models import User,RenterAccount,LenderAccount
 from .forms import  UserCreate
 from django.db.models import Q
 import uuid
@@ -38,6 +38,10 @@ def signup_for_leander(request):
             else:
                 usernew.root=1
                 usernew.save()
+                leander=LenderAccount()
+                leander.use=usernew
+                leander.balance=200
+                leander.save()
                 return render(
                     request,
                     'account/finsh_sign_up.html',

@@ -27,7 +27,7 @@
         }
 
         </style>
-     <h1>hui   </h1>
+     <h1>Oreder check</h1>
 
 
 
@@ -69,10 +69,10 @@
                 <div style="position:relative;top:100px; right:50px">
                 <div align = "center" style = "position:absolute; top:250px; left:500px">
 
-                                <a href="/payment_page/" class="button">PAY!</a>
+                                <a href="{% url "renter:payment_page" %}" class="button">PAY!</a>
                                 </div>
                                 <div align = "center" style = "position:absolute; top:250px; left:800px">
-                <button>Cancel</button>
+                                 <a href="{% url "renter:renter_list" %}" class="button">Cancel!</a>
                 </div>
                 </div>
             </table>

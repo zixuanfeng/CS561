@@ -19,7 +19,7 @@
                 {% if request.user.root == 2%}
              Hi <a href="{% url "renter:renter_view" %}" class="header-main-link">{{request.user.username }} {{ request.user.first_name }}</a>
                 {% else %}
-             Hi {{request.user.username }} {{ request.user.first_name }}
+             Hi <a href="{% url "lender:lender_view" %}" class="header-main-link">{{request.user.username }} {{ request.user.first_name }}</a>
                 {% endif %}
             <a href="{% url "logout" %}" class="header-main-link">Log Out</a>
             {% else %}
