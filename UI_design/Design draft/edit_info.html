@@ -1,0 +1,96 @@
+{% extends "main.html" %}
+{% block title %}Ware House System{% endblock %}
+{% block content %}
+
+<br><br><br><br><br>
+<style>
+
+        button {
+            color: #444444;
+            background: #F3F3F3;
+            border: 1px #DADADA solid;
+            padding: 20px 30px;
+            border-radius: 2px;
+            font-weight: bold;
+            font-size: 11pt;
+            outline: none;
+            
+        }
+        button:hover {
+            border: 1px #C6C6C6 solid;
+            box-shadow: 1px 1px 1px #EAEAEA;
+            color: #333333;
+            background: #F7F7F7;
+        }
+        button:active {
+            box-shadow: inset 1px 1px 1px #DFDFDF;   
+        }
+        
+        </style>
+     <h1>edit personal information</h1>
+        <hr/><div board = 1, body style = "background-color: white">
+<table  width="800" align="center" >
+   
+        
+        
+                <tr>
+                        <td>Current information<td width="100" height="50"></td> 
+                        
+                        <td width="100" height="50"></td>
+
+                </tr>   
+                       
+                <table border="1" width="700" height="500" align="center" cellspacing="0"> </h2>
+                        <tr align="center">
+                            <td bgcolor="white">Last name:</td>
+                        </tr>
+                    
+                        <tr align="center">
+                            <td bgcolor="white">First name:</td>
+                        </tr>
+        
+                         <tr align="center">
+                                <td bgcolor="white">Email:</td>
+                        </tr>
+                        <tr align="center">
+                                <td bgcolor="white">Phonename:</td>
+                        </tr>
+                        <tr align="center">
+                                <td bgcolor="white">adress:</td>
+                        </tr>
+                    </table>
+
+                <tr>
+                        <td>New change:<td width="100" height="50"></td> 
+                        
+                        <td width="100" height="50"></td>
+
+                </tr>  
+                <tr>
+                        <td>Last name<input class="text" style=" float:right;" placeholder="/XXXXX" readonly="readonly" />
+                </tr>
+                
+                <tr>
+                        <td>First name<input class="text" style=" float:right;" placeholder="/XXXXX" readonly="readonly" />
+                </tr>
+                
+                <tr>
+                        <td>Email:<input class="text" style=" float:right;" placeholder="/XXXXX" readonly="readonly" />
+                </tr>
+                <tr>
+                        <td>Phonename:<input class="text" style=" float:right;" placeholder="/XXXXX" readonly="readonly" />
+                </tr>
+                <tr>
+                        <td>adress:<input class="text" style=" float:right;" placeholder="/XXXXX" readonly="readonly" />
+                </tr>
+                <div style="position:relative;top:100px; right:50px">
+                <div align = "center" style = "position:absolute; top:250px; left:500px">
+                        
+                                <button>Change now</button>
+                                </div>
+                                <div align = "center" style = "position:absolute; top:250px; left:800px">        
+                <button>Cancel</button>
+                </div>
+                </div>
+            </table>
+{% endblock %}
