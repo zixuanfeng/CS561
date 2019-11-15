@@ -13,7 +13,12 @@ import random
 #     renting_list=Warehouse.objects.get(warehouse_currentow)
 #     user = User.objects.get(Q(username=username)|Q(email=username))
 #     return render(request, 'renter/checking_renting.html')
-
+# @login_required
+# def personal_information(request):
+#     #template = loader.get_template('')
+#     renting_list=Warehouse.objects.get(warehouse_currentow)
+#     user = User.objects.get(Q(username=username)|Q(email=username))
+#     return render(request, 'renter/personal_information.html')
 
 @login_required
 def renter_view(request):

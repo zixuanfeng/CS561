@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^renter_list/(?P<warehouse_id>[0-9]+)$', views.order_check, name='order_check'),
     path('get_password/', views.get_password, name="get_password"),
     # path('checking_renting/', views.checking_renting, name="checking_renting"),
+    # path('personal_information/', views.personal_information, name="personal_information"),
     ]
