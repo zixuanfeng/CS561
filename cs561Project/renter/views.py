@@ -45,7 +45,7 @@ def get_password(request,warehouse_id):
     TheCurrentRent.user_id = request.user.user_id
     today = datetime.today()
     TheCurrentRent.order_date = today
-    context = {'The_Warehouse': TheWarehouse}
+    context = {'The_Warehouse': TheWarehouse , 'The_Current_Rent' : TheCurrentRent}
     return render(request, 'renter/get_password.html',  context)
 
 
