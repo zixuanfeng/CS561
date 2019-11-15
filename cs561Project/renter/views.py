@@ -6,6 +6,15 @@ from django.http import HttpResponse
 from account.models import Warehouse
 import random
 
+
+# @login_required
+# def checking_renting(request):
+#     #template = loader.get_template('')
+#     renting_list=Warehouse.objects.get(warehouse_currentow)
+#     user = User.objects.get(Q(username=username)|Q(email=username))
+#     return render(request, 'renter/checking_renting.html')
+
+
 @login_required
 def renter_view(request):
     #template = loader.get_template('')

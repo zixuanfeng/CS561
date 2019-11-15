@@ -9,4 +9,5 @@ urlpatterns = [
     path('payment_page/', views.payment_page, name="payment_page"),
     url(r'^renter_list/(?P<warehouse_id>[0-9]+)$', views.order_check, name='order_check'),
     path('get_password/', views.get_password, name="get_password"),
+    # path('checking_renting/', views.checking_renting, name="checking_renting"),
     ]
