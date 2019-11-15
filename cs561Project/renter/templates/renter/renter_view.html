@@ -34,9 +34,7 @@ button:active {
     </style>
 <br><br><br><br>
 
-<h1>Renter View<div style=" float:right;">
-        <input type="button" value="Sign Out" />
-        </div></h1> 
+<h1>Renter View</h1> 
 
 <hr/><div board = 1, body style = "background-color: white"> </hr>
         
@@ -48,11 +46,11 @@ button:active {
             </tr>
             
             <tr align="center">
-                    <td bgcolor="white"><a style="text-decoration:none;color:black" href="#"<button >Checking Renting</button></a></td>
+                    <td bgcolor="white"><a style="text-decoration:none;color:black" href="{% url "renter:checking_renting" %}"<button >Checking Renting</button></a></td>
             </tr>
 
             <tr align="center">
-                            <td bgcolor="white"><a style="text-decoration:none;color:black" href="#"<button>Personal Infomation</button></a></td>
+                            <td bgcolor="white"><a style="text-decoration:none;color:black" href="{% url "renter:edit_info" %}"button>Personal Infomation</button></a></td>
             </tr>
             <tr align="center">
                 <td bgcolor="white"><a style="text-decoration:none;color:black" href="#"<button >Recharge account</button></a></td>

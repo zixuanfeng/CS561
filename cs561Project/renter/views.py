@@ -6,34 +6,30 @@ from django.http import HttpResponse
 from account.models import Warehouse
 from account.models import User
 import random
+from .forms import updateForm
 
+@login_required
+def checking_renting(request):
+    renting_list=Warehouse.objects.filter(warehouse_currentuser_use_id=request.user.user_id)
+    return render(request, 'renter/checking_renting.html',{'renting_list':renting_list })
 
-# @login_required
-# def checking_renting(request):
-   
-#     renting_list=Warehouse.objects.get(warehouse_currentow)
-#     user = User.objects.get(Q(username=username)|Q(email=username))
-#     return render(request, 'renter/checking_renting.html')
-
-# @login_required
-# def personal_information(request,username,email):
-#     if request.method == 'POST':
-#         name=username
-#         mail=email
-#         if name == ''|mail == '':
-#             return render(request, 'renter/personal_information.html')
-#         user = User.objects.get(user_id=request.user.user_id)
-#         user.email=email
-#         user.username=name
-#         user.save()
-#         return render(request, 'renter/update_success.html')
-#     else:
-#         user = User.objects.get(user_id=request.user.user_id)
-#     return render(
-#         request,
-#         'renter/personal_information.html',
-#         {'user_info': user}
-#     )
+@login_required
+def edit_info(request):
+    user = User.objects.get(user_id=request.user.user_id)
+    if request.method == 'POST':
+        user = User.objects.get(user_id=request.user.user_id)
+        user.email=request.POST.get('email')
+        user.first_name=request.POST.get('first_name')
+        user.last_name=request.POST.get('last_name')
+        user.save()
+        return render(request, 'renter/update_success.html')
+    else:
+        form = updateForm()
+    return render(
+        request,
+        'renter/edit_info.html',
+        {'user_info': user,"user_update":form}
+    )
 
 @login_required
 def renter_view(request):

@@ -12,7 +12,7 @@
        <ul>
     {% for Warehouse in all_warehouses %}
     <li><a href="/renter_list/{{ Warehouse.warehouse_id }}">Name: {{ Warehouse.warehouse_name }} Size: {{ Warehouse.warehouse_size }} Price: {{ Warehouse.warehouse_price }}</a></li>
-    {%  endfor %}
+    {% endfor %}
 </ul>
     </div>
 {% endblock %}
