@@ -25,4 +25,4 @@ class UserModelCase(TestCase):
         print("Warehouse Test ID is 666 and equal name with ware_unittest ")
         self.assertEqual(res.warehouse_name,"ware_unittest")
     def tearDown(self):
-        print("==Warehouse in tearDown")
+        print("==Warehouse data in tearDown")
