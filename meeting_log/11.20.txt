@@ -1,0 +1,2 @@
+1.Determine the tasks of sprint3, improve the functions of the previous lender and renter, and develop the administrator mode.
+2.Analyze new database design.
