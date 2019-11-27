@@ -18,8 +18,10 @@
              {% if request.user.is_authenticated%}
                 {% if request.user.root == 2%}
              Hi <a href="{% url "renter:renter_view" %}" class="header-main-link">{{request.user.username }} {{ request.user.first_name }}</a>
-                {% else %}
+                {% elif request.user.root == 1%}
              Hi <a href="{% url "lender:lender_view" %}" class="header-main-link">{{request.user.username }} {{ request.user.first_name }}</a>
+                {% elif request.user.root == 0%}
+             Hi <a href="{% url "admin_new:admin_new_view" %}" class="header-main-link">{{request.user.username }} {{ request.user.first_name }}</a>
                 {% endif %}
             <a href="{% url "logout" %}" class="header-main-link">Log Out</a>
             {% else %}

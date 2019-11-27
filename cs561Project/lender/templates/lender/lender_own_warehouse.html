@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+{% block title %}Ware House System{% endblock %}
+{% block content %}
+<br><br><br><br>
+<h1>Owned Warehouse </h1>
+     <hr/><div board = 1, body style = "background-color: white">
+       <ul>
+    {% for Warehouse in all_warehouses %}
+    <li>Name: {{ Warehouse.warehouse_name }} Size: {{ Warehouse.warehouse_size }} Price: {{ Warehouse.warehouse_price }}</li>
+    {% endfor %}
+</ul>
+    </div>
+{% endblock %}

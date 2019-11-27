@@ -1,0 +1,67 @@
+{% extends "main.html" %}
+{% block title %}Ware House System{% endblock %}
+{% block content %}
+
+
+<style>
+        td{
+            width: 80px;
+        }
+        button {
+    color: #444444;
+    background: #F3F3F3;
+    border: 1px #DADADA solid;
+    padding: 20px 30px;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 30pt;
+    outline: none;
+    
+}
+button:hover {
+    border: 1px #C6C6C6 solid;
+    box-shadow: 1px 1px 1px #EAEAEA;
+    color: #333333;
+    background: #F7F7F7;
+}
+button:active {
+    box-shadow: inset 1px 1px 1px #DFDFDF;   
+}
+   
+
+
+
+    </style>
+<br><br><br><br>
+
+<h1>Admin View<div style=" float:right;">
+        
+        </div></h1> 
+
+<hr/><div board = 1, body style = "background-color: white"> </hr>
+        
+    
+       
+      <h2>  <table border="1" width="700" height="500" align="center" cellspacing="0"> </h2>
+                <tr align="center">
+                    <td bgcolor="white"><a style="text-decoration:none;color:black" href="{% url "admin_new:view_lender" %}"<button>View lender</button></a ></td>
+            </tr>
+            
+            <tr align="center">
+                    <td bgcolor="white"><a style="text-decoration:none;color:black" href="{% url "admin_new:view_renter" %}"<button>View renter</button></a ></td>
+                    
+            </tr>
+            <tr align="center">
+                    <td bgcolor="white"><a style="text-decoration:none;color:black" href="{% url "admin_new:view_warehouse_list_manage" %}"<button>Manage View warehouse</button></a ></td>
+            </tr>
+            <tr align="center">
+                            {% comment %} <td bgcolor="white"><a style="text-decoration:none;color:black" href="{% url "admin_new:view_order" %}"<button>View order</button></a ></td> {% endcomment %}
+            </tr>
+            <tr align="center">
+                <td bgcolor="white"><a style="text-decoration:none;color:black" href="{% url "admin_new:view_warehouse_list" %}"<button >View warehouse</button></a></td>
+            </tr>
+            </table>
+   </div>  
+
+
+{% endblock %}

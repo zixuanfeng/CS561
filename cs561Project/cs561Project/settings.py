@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'renter.apps.RenterConfig',
     'lender.apps.LenderConfig',
+    'admin_new.apps.AdminNewConfig',
 ]
 
 MIDDLEWARE = [

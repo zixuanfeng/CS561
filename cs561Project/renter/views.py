@@ -4,17 +4,30 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from account.models import Warehouse
-from account.models import User
+from account.models import User,RenterAccount
 from account.models import RentOrder
 import random 
 from django.utils.timezone import datetime
 from django.utils import timezone
-from .forms import updateForm
+from .forms import updateForm,rechargeForm
 @login_required
 def checking_renting(request):
     renting_list=Warehouse.objects.filter(warehouse_currentuser_use_id=request.user.user_id)
     return render(request, 'renter/checking_renting.html',{'renting_list':renting_list })
-
+@login_required
+def recharge(request):
+    renter = RenterAccount.objects.get(user_id=request.user.user_id)
+    if request.method == 'POST':
+        renter = RenterAccount.objects.get(user_id=request.user.user_id)
+        renter.balance=renter.balance+int(request.POST.get('amount'))
+        renter.save()
+        return render(request, 'renter/recharge_success.html')
+    else:
+        form = rechargeForm()
+    return render(
+        request,
+        'renter/recharge.html',
+        {'current_amount': renter.balance,"recharge_form":form})
 @login_required
 def edit_info(request):
     user = User.objects.get(user_id=request.user.user_id)

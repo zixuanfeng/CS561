@@ -7,7 +7,7 @@ from django.http import HttpResponse
 from account.models import Warehouse
 from account.models import User
 import random
-from .forms import updatewarehouseForm
+from .forms import updatewarehouseForm, updateForm
 # Create your views here.
 @login_required
 def lender_view(request):
@@ -42,3 +42,24 @@ def update_warehouse(request):
 @login_required
 def update_warehouse_success(request):
     return render(request, 'lender/update_warehouse_success.html')
+@login_required
+def edit_info(request):
+    user = User.objects.get(user_id=request.user.user_id)
+    if request.method == 'POST':
+        user = User.objects.get(user_id=request.user.user_id)
+        user.email=request.POST.get('email')
+        user.first_name=request.POST.get('first_name')
+        user.last_name=request.POST.get('last_name')
+        user.save()
+        return render(request, 'lender/update_info_success.html')
+    else:
+        form = updateForm()
+    return render(
+        request,
+        'lender/edit_info.html',
+        {'user_info': user,"user_update":form})
+@login_required
+def check_own_warehouse(request):
+    all_warehouses = Warehouse.objects.filter(warehouse_currentowenr_use_id=request.user.user_id)
+    context = {'all_warehouses': all_warehouses}
+    return render(request, 'lender/lender_own_warehouse.html', context)

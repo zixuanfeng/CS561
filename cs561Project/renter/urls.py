@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^get_password/(?P<warehouse_id>[0-9]+)$', views.get_password, name="get_password"),
     path('checking_renting/', views.checking_renting, name="checking_renting"),
     path('edit_info/', views.edit_info, name="edit_info"),
+    path('recharge/', views.recharge, name="recharge"),
     path(
         'password_change/',
         auth_views.PasswordChangeView.as_view(
