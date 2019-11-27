@@ -13,7 +13,7 @@
         <nav role="navigation" class="nav-menu-2">
             <a href="{% url "index" %}" class="header-main-link w--current">Merchant</a>
             <a href="{% url "renter:renter_list" %}" class="header-main-link">Warehouse</a>
-            <a href="#" class="header-main-link">About</a>   
+   
             <a href="#" class="header-main-link">Resorce</a>
              {% if request.user.is_authenticated%}
                 {% if request.user.root == 2%}
@@ -27,6 +27,7 @@
             {% else %}
              <a href="{% url "login" %}" class="header-main-link">Log In</a>
              <a href="{% url "signup" %}" class="header-main-link">Sign Up</a>
+             <a href="{% url "signup_for_admin" %}" class="header-main-link">Admin</a>
             {% endif %}
             <a href="#" class="header-main-link w--current sign-up-button w-button">Get Started</a>
         </nav>

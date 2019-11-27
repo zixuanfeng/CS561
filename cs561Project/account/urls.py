@@ -11,4 +11,5 @@ urlpatterns = [
     path('board/', views.board, name='board'),
     path('logout/',auth_views.LogoutView.as_view(template_name='account/log-out-page.html'),name='logout'
     ),
+    path('signup_for_admin/', views.signup_for_admin, name="signup_for_admin"),
 ]

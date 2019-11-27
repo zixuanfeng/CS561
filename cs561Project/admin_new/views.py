@@ -40,3 +40,34 @@ def warehouse_del(request,warehouse_id):
     TheWarehouse = Warehouse.objects.get(warehouse_id = warehouse_id)
     TheWarehouse.delete()
     return render(request, 'admin_new/warehouse_del_success.html')
+@login_required
+def manage_account_lender(request):
+    manage_account_lender = User.objects.filter(root=1)
+    context = {'all_account': manage_account_lender}
+    return render(request, 'admin_new/admin_manage_account_lender.html', context)    
+@login_required
+def manage_account_renter(request):
+    manage_account_renter = User.objects.filter(root=2)
+    context = {'all_account': manage_account_renter}
+    return render(request, 'admin_new/admin_manage_account_renter.html', context)
+
+@login_required
+def manage_account_renter_del(request,user_id):
+    user = User.objects.get(user_id = user_id)
+    user.delete()
+    return render(request, 'admin_new/renter_del_success.html')
+@login_required
+def manage_account_lender_del(request,user_id):
+    user = User.objects.get(user_id = user_id)
+    user.delete()
+    return render(request, 'admin_new/lender_del_success.html')
+@login_required
+def manage_account_renter_manage(request,user_id):
+    user = User.objects.get(user_id = user_id)
+    context = {'confirm' : user}
+    return render(request, 'admin_new/manage_renter_confirm.html', context )
+@login_required
+def manage_account_lender_manage(request,user_id):
+    user = User.objects.get(user_id = user_id)
+    context = {'confirm' : user}
+    return render(request, 'admin_new/manage_lender_confirm.html', context )

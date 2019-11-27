@@ -52,10 +52,13 @@ button:active {
                     
             </tr>
             <tr align="center">
-                    <td bgcolor="white"><a style="text-decoration:none;color:black" href="{% url "admin_new:view_warehouse_list_manage" %}"<button>Manage View warehouse</button></a ></td>
+                    <td bgcolor="white"><a style="text-decoration:none;color:black" href="{% url "admin_new:view_warehouse_list_manage" %}"<button>Manage warehouse</button></a ></td>
             </tr>
             <tr align="center">
-                            {% comment %} <td bgcolor="white"><a style="text-decoration:none;color:black" href="{% url "admin_new:view_order" %}"<button>View order</button></a ></td> {% endcomment %}
+                            <td bgcolor="white"><a style="text-decoration:none;color:black" href="{% url "admin_new:manage_account_renter" %}"<button>Manage renter</button></a ></td>
+            </tr>
+             <tr align="center">
+                            <td bgcolor="white"><a style="text-decoration:none;color:black" href="{% url "admin_new:manage_account_lender" %}"<button>Manage lender</button></a ></td>
             </tr>
             <tr align="center">
                 <td bgcolor="white"><a style="text-decoration:none;color:black" href="{% url "admin_new:view_warehouse_list" %}"<button >View warehouse</button></a></td>
