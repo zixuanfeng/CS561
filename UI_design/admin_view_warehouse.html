@@ -1,7 +1,7 @@
 {% extends "main.html" %}
 {% block title %}Ware House System{% endblock %}
 {% block content %}
-<br><br><br><br>
+<br><br><br><br><br><br><br><br>
 <style>
 
     button {
@@ -26,24 +26,16 @@
     }
     
     </style>
-    <h1 style="margin:0 10px 10px;">View all renter</h1>
-     <hr/>
+    <h1 style="margin:0 10px 10px;">View all Warehouse</h1>
      
      
      <div board = 1, body style = "background-color: white">
        <ul>
     <table  width="800" align="center" >
-            <tr>
-                    <td>Current List<td width="100" height="50"></td> 
-                    
-                    <td width="100" height="50"></td>
-
-            </tr>  
-    {% for Warehouse in renting_list %}
+    {% for Warehouse in all_warehouse %}
     <li>Name: {{ Warehouse.warehouse_name }} Size: {{ Warehouse.warehouse_size }} Price: {{ Warehouse.warehouse_price }}</li>
+    {% comment %} <li><a href="/view_warehouse_list/{{ Warehouse.warehouse_id }}">Name: {{ Warehouse.warehouse_name }} Size: {{ Warehouse.warehouse_size }} Price: {{ Warehouse.warehouse_price }}</a></li> {% endcomment %}
     {% endfor %}
-
-    <button>Return</button>
     </table>
 </ul>
     </div>

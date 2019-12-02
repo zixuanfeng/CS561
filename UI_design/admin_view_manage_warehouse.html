@@ -1,7 +1,7 @@
 {% extends "main.html" %}
 {% block title %}Ware House System{% endblock %}
 {% block content %}
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
 <style>
 
     button {
@@ -32,11 +32,11 @@
      
      <div board = 1, body style = "background-color: white">
        <ul>
-    <table  width="800" align="center" >
-    {% for lender in all_lender %}
-    <li>User Name: {{ lender.username }}First Name: {{ lender.first_name }} Last Nmae: {{ lender.last_name }} Last log in: {{ lender.last_login}}</li>
+    <table  width="800" align="center" > 
+    {% for Warehouse in all_warehouse %}
+    
+    <li><a href="/view_warehouse_list/{{ Warehouse.warehouse_id }}">Name: {{ Warehouse.warehouse_name }} Size: {{ Warehouse.warehouse_size }} Price: {{ Warehouse.warehouse_price }}</a></li>
     {% endfor %}
-
     </table>
 </ul>
     </div>
