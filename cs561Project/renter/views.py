@@ -79,7 +79,7 @@ def get_password(request,warehouse_id):
     CurrentOrderId = random.randint(0,9999)
     TheCurrentRent = RentOrder.objects.create(order_id=CurrentOrderId,user_id=request.user.user_id,order_date=datetime.now())
     context = {'The_Warehouse': TheWarehouse , 'The_Current_Rent' : TheCurrentRent}
-    return render(request, 'renter/get_password.html',  context)
+    return render(request, 'renter/get_password.html',   context)
 
 
 
