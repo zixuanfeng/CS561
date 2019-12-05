@@ -74,7 +74,7 @@ def signup_for_renter(request):
                 usernew.root=2
                 usernew.save()
                 renter=RenterAccount()
-                renter.user=usernew
+                renter.user_id=usernew.user_id
                 renter.balance=200
                 renter.save()
                 return render(

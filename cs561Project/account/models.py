@@ -35,7 +35,6 @@ class RentOrder(models.Model):
 
 class RenterAccount(models.Model):
     user_id = models.IntegerField(primary_key=True)
-    # user = models.ForeignKey('User', models.DO_NOTHING)
     balance = models.FloatField(blank=True, null=True)
 
     class Meta:
