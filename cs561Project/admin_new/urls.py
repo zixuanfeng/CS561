@@ -11,6 +11,7 @@ urlpatterns = [
     path('view_warehouse_list_manage/', views.view_warehouse_list_manage, name="view_warehouse_list_manage"),
     path('view_warehouse_list/', views.view_warehouse_list, name="view_warehouse_list"),
     # path('view_order/', views.view_order, name="view_order"),
+    # path('view/', views.order, name="order"),
     url(r'^view_warehouse_list/(?P<warehouse_id>[0-9]+)$', views.Warehouse_manage, name='Warehouse_manage'),
     url(r'^warehouse_del/(?P<warehouse_id>[0-9]+)$', views.warehouse_del, name='warehouse_del'),
 
