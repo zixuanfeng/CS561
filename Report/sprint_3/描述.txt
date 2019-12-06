@@ -1,0 +1,24 @@
+1: fianl_page_view (Zeyuan,Mikhail,Zixuan)
+2: admin sign in (Zeyuan,Mikhail,Zixuan)
+3: admin log in (Zeyuan,Mikhail,Zixuan)
+4: admin view (Beisi,Yuxuan,Beisi)
+5: admin view all lender (Beisi,Yuxuan,Beisi)
+6: admin view all renter (Beisi,Yuxuan,Beisi)
+7: admin view all warehouse (Beisi,Yuxuan,Beisi)
+8: admin manage lender (Zeyuan,Niu,Zeyuan)
+9: admin manage renter (Zeyuan,Niu,Zeyuan)
+10: admin manage warehouse (Zeyuan,Niu,Zeyuan)
+11: renter recharge (Yuxuan,Yuxuan,Yuxuan)
+(aaa(ui），bbb(back),ccc(test))
+
+user test---- Mikhail
+
+sprint3主要完成了admin的6种功能，并且补充了renter充值的功能
+管理员可以登陆注册
+显示所有的lender
+显示所有的renter
+显示所有的warehouse
+管理所有lender
+管理所有renter
+管理所有warehouse
+压缩文件中有所有的界面截图，也附加了最终的数据库设计的截图
