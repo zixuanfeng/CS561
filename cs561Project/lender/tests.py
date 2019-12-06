@@ -12,6 +12,7 @@ class UserModelCase(TestCase):
             warehouse_name : Lenderupdate_unittest
             warehouse_size :100
         }
+        Check Lender delete
         """
         print("==lender update Warehouse in setup")
         Warehouse.objects.create( warehouse_id='11100', warehouse_name='Lenderupdate_unittest', warehouse_size='100')
