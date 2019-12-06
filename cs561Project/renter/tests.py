@@ -12,6 +12,7 @@ class UserModelCase(TestCase):
             warehouse_name : ware_unittest
             warehouse_size :100
         }
+        check renter delete
         """
         print("==Warehouse in setup")
         Warehouse.objects.create( warehouse_id='666', warehouse_name='ware_unittest', warehouse_size='100')
