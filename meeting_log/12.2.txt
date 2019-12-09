@@ -1,0 +1,3 @@
+Completed the admin the view 
+show the lender and renter
+finish the final database design.
